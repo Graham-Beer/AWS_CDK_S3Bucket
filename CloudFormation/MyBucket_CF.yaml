@@ -1,0 +1,22 @@
+Resources:
+  MyFirstBucketB8884501:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+      BucketName: grahamb
+      LifecycleConfiguration:
+        Rules:
+          - ExpirationInDays: 30
+            Id: customrule
+            Status: Enabled
+      VersioningConfiguration:
+        Status: Enabled
+    Metadata:
+      aws:cdk:path: MyBucket/MyFirstBucket/Resource
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Modules: aws-cdk=0.28.0,@aws-cdk/aws-events=0.28.0,@aws-cdk/aws-iam=0.28.0,@aws-cdk/aws-kms=0.28.0,@aws-cdk/aws-s3=0.28.0,@aws-cdk/aws-s3-notifications=0.28.0,@aws-cdk/cdk=0.28.0,@aws-cdk/cx-api=0.28.0,@aws-cdk/region-info=0.28.0,jsii-runtime=DotNet/4.0.30319.42000
