@@ -7,7 +7,11 @@ namespace MyCustomBucket
         static void Main(string[] args)
         {
             var app = new App(null);
-            new MyStack(app, "MyBucket");
+
+            // A CDK app can contain multiple stacks. You can view a list of all the stacks in your
+            // app by typing `cdk list`.
+
+            new MyStack(app, "MyBucket", new StackProps());
             app.Run();
         }
     }
