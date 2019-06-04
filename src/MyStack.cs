@@ -8,7 +8,7 @@ namespace MyCustomBucket
         private const string bn = "grahamb";
         private const string ruleName = "customrule";
 
-        public MyStack(App scope, string id) : base(scope, id, null)
+        public MyStack(Construct scope, string id, IStackProps props) : base(scope, id, props)
         {
             Bucket bucket = new Bucket(
                 this, "MyFirstBucket", new BucketProps
@@ -24,7 +24,7 @@ namespace MyCustomBucket
                 ExpirationInDays = 30
             };
 
-           bucket.AddLifecycleRule(rule: lifecycleRule);
+            bucket.AddLifecycleRule(lifecycleRule);
         }
     }
 }
