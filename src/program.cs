@@ -8,14 +8,11 @@ namespace MyCustomBucket
         {
             var app = new App(null);
 
-            // A CDK app can contain multiple stacks. You can view a list of all the stacks in your
-            // app by typing `cdk list`.
-
             new MyStack(app, "MyBucket", new StackProps
             {
-                Env = new Amazon.CDK.Environment()
+                Env = new Environment
                 {
-                    Account = "AKIA347OXPEBCIIT4XY2",
+                    Account = "", // Account Id
                     Region = "eu-west-2"
                 }
             });
